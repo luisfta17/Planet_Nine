@@ -1,0 +1,23 @@
+{
+  "name": "planet_nine",
+  "version": "1.0.0",
+  "description": "CodeClan Group Project JS",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server:dev": "nodemon server/server.js",
+    "build": "webpack -w"
+  },
+  "author": "Pauline Katy Richard Luis",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.17.5",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongodb": "^3.1.0"
+  }
+}
