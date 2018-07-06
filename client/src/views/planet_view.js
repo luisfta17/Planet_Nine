@@ -2,7 +2,7 @@ const PubSub = require('../helpers/pub_sub');
 const PlanetInfoView = require('./planet_info_view');
 
 const PlanetView = function(container){
-  this.container;
+  this.container = container;
 };
 
 PlanetView.prototype.bindEvents = function () {
@@ -13,6 +13,9 @@ PlanetView.prototype.bindEvents = function () {
 };
 
 PlanetView.prototype.renderInitialInfo = function (planets) {
+  this.container.innerHTML = '';
+  const planetInfoView = new PlanetInfoView(this.container);
+  planetInfoView.initialRender(planets)
 
   // const name = this.createName(planet.species);
   // sightingContainer.appendChild(species);
