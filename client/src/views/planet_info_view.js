@@ -21,6 +21,19 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
     }
     this.container.appendChild(previousButton);
 
+    const moreInfoButton = document.createElement('button');
+    moreInfoButton.textContent = "More Info";
+    this.container.appendChild(moreInfoButton);
+
+    const nextButton = document.createElement('button');
+    nextButton.textContent = "Next";
+    if (value === planets.length -1) {
+      nextButton.value = 0
+    } else {
+      nextButton.value = value + 1
+    }
+    this.container.appendChild(nextButton);
+
 };
 
 module.exports = PlanetInfoView;
