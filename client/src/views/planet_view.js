@@ -6,9 +6,26 @@ const PlanetView = function(container){
 
 PlanetView.prototype.bindEvents = function () {
   PubSub.subscribe('Planets:data-loaded', (evt) => {
-
+     this.render(evt.detail);
   });
 
+};
+
+PlanetView.prototype.render= function (planets) {
+console.log(planets);
+  // const name = this.createName(planet.species);
+  // sightingContainer.appendChild(species);
+  //
+  // const location = this.createDetail('Location', sighting.species);
+  // sightingContainer.appendChild(location);
+  //
+  // const date = this.createDetail('Date', sighting.date);
+  // sightingContainer.appendChild(date);
+  //
+  // const deleteButton = this.createDeleteButton(sighting._id);
+  // sightingContainer.appendChild(deleteButton);
+  //
+  // this.container.appendChild(sightingContainer);
 };
 
 module.exports = PlanetView;

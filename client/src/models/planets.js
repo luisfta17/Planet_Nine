@@ -13,10 +13,7 @@ Planets.prototype.getData = function () {
         PubSub.publish('Planets:data-loaded', planets);
       })
       .catch(console.error);
-  }
-
-
-};
+  };
 
 
 
