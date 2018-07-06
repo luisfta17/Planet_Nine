@@ -4,6 +4,8 @@ const PlanetInfoView = function(container){
 
 PlanetInfoView.prototype.initialRender = function (planets, value) {
   let planetValue = value;
+  let distanceFromEarth = planets[value].dfe;
+  let age = planets[value].age;
   this.container.innerHTML = ' ';
 
   const planetName = document.createElement('h2');
@@ -13,6 +15,9 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
   const planetImage = document.createElement('img');
   planetImage.src = planets[value].picture;
   this.container.appendChild(planetImage);
+
+  this.createParagraph(`Distance from Earth: ${distanceFromEarth}`);
+  this.createParagraph(`Age: ${age}`);
 
   const previousButton = document.createElement('button');
   previousButton.textContent = "Previous";
@@ -64,6 +69,12 @@ PlanetInfoView.prototype.planetInfoRender = function (planets, value) {
   this.createSubtitle("Can have life?");
   this.createParagraph(planets[value].life);
 
+  const moreInfoButton = document.createElement('button');
+  moreInfoButton.textContent = "Go Back";
+  moreInfoButton.addEventListener('click', () => {
+    this.initialRender(planets, value)
+  });
+  this.container.appendChild(moreInfoButton);
 
 };
 

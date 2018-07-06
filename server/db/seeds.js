@@ -33,7 +33,7 @@ db.planets.insertMany([
   {
     name: 'Venus',
     age: '4.5 billion years',
-    dfe: '261 million kilometers',
+    dfe: '40 million kilometers',
 
     picture: 'https://solarsystem.nasa.gov/system/resources/detail_files/688_Venus.jpg',
 
