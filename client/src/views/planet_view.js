@@ -1,4 +1,5 @@
 const PubSub = require('../helpers/pub_sub');
+const PlanetInfoView = require('./planet_info_view');
 
 const PlanetView = function(container){
   this.container;
@@ -6,12 +7,12 @@ const PlanetView = function(container){
 
 PlanetView.prototype.bindEvents = function () {
   PubSub.subscribe('Planets:data-loaded', (evt) => {
-     this.render(evt.detail);
+     this.renderInitialInfo(evt.detail);
   });
 
 };
 
-PlanetView.prototype.render= function (planets) {
+PlanetView.prototype.renderInitialInfo = function (planets) {
 
   // const name = this.createName(planet.species);
   // sightingContainer.appendChild(species);
