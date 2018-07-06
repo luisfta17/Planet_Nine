@@ -15,7 +15,7 @@ PlanetView.prototype.bindEvents = function () {
 PlanetView.prototype.renderInitialInfo = function (planets) {
   this.container.innerHTML = '';
   const planetInfoView = new PlanetInfoView(this.container);
-  planetInfoView.initialRender(planets)
+  planetInfoView.initialRender(planets, 0)
 
   // const name = this.createName(planet.species);
   // sightingContainer.appendChild(species);
