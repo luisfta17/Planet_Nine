@@ -13,6 +13,14 @@ const createRouter = function (collection) {
     .then((docs) => res.json(docs));
   });
 
+  router.get('/:id', (req, res) => {
+    const id = req.params.id;
+    collection
+    .findOne( { _id : ObjectID(id) })
+    .then((doc) => res.json(doc));
+  });
+
+
   return router;
 
 };
