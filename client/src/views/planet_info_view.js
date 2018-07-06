@@ -5,7 +5,7 @@ const PlanetInfoView = function(container){
 PlanetInfoView.prototype.initialRender = function (planets, value) {
   let planetValue = value;
   this.container.innerHTML = ' ';
-  console.log(value);
+
   const planetName = document.createElement('h2');
   planetName.textContent = planets[value].name;
   this.container.appendChild(planetName);
@@ -29,7 +29,7 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
   const moreInfoButton = document.createElement('button');
   moreInfoButton.textContent = "More Info";
   moreInfoButton.addEventListener('click', () => {
-    this.planetInfoRender(planets[planetValue])
+    this.planetInfoRender(planets, planetValue)
   });
   this.container.appendChild(moreInfoButton);
 
@@ -48,21 +48,21 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
 };
 
 
-PlanetInfoView.prototype.planetInfoRender = function (planet) {
+PlanetInfoView.prototype.planetInfoRender = function (planets, value) {
   this.container.innerHTML = " ";
   const planetName = document.createElement('h2');
-  planetName.textContent = planet.name;
+  planetName.textContent = planets[value].name;
   this.container.appendChild(planetName);
 
-  this.createParagraph(planet.summary);
+  this.createParagraph(planets[value].summary);
   this.createSubtitle("Size and Distance");
-  this.createParagraph(planet.sizeAndDistance);
+  this.createParagraph(planets[value].sizeAndDistance);
   this.createSubtitle("Orbit and Rotation");
-  this.createParagraph(planet.orbitAndRotation);
+  this.createParagraph(planets[value].orbitAndRotation);
   this.createSubtitle("Formation");
-  this.createParagraph(planet.formation);
+  this.createParagraph(planets[value].formation);
   this.createSubtitle("Can have life?");
-  this.createParagraph(planet.life);
+  this.createParagraph(planets[value].life);
 
 
 };
