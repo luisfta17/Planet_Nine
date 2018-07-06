@@ -8,19 +8,12 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
   let age = planets[value].age;
   this.container.innerHTML = ' ';
 
-  const planetName = document.createElement('h2');
-  planetName.textContent = planets[value].name;
-  this.container.appendChild(planetName);
-
-  const planetImage = document.createElement('img');
-  planetImage.src = planets[value].picture;
-  this.container.appendChild(planetImage);
-
+  this.createTitle(planets[value].name)
+  this.createImage(planets[value].picture)
   this.createParagraph(`Distance from Earth: ${distanceFromEarth}`);
   this.createParagraph(`Age: ${age}`);
 
-  const previousButton = document.createElement('button');
-  previousButton.textContent = "Previous";
+  const previousButton = this.createButton("Previous")
   previousButton.addEventListener('click', () => {
     if (planetValue <= 0) {
       planetValue = planets.length -1
@@ -31,15 +24,13 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
   });
   this.container.appendChild(previousButton);
 
-  const moreInfoButton = document.createElement('button');
-  moreInfoButton.textContent = "More Info";
+  const moreInfoButton = this.createButton("More info");
   moreInfoButton.addEventListener('click', () => {
     this.planetInfoRender(planets, planetValue)
   });
   this.container.appendChild(moreInfoButton);
 
-  const nextButton = document.createElement('button');
-  nextButton.textContent = "Next";
+  const nextButton = this.createButton("Next")
   nextButton.addEventListener('click', () => {
     if (value >= planets.length -1) {
       planetValue = 0
@@ -55,10 +46,8 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
 
 PlanetInfoView.prototype.planetInfoRender = function (planets, value) {
   this.container.innerHTML = " ";
-  const planetName = document.createElement('h2');
-  planetName.textContent = planets[value].name;
-  this.container.appendChild(planetName);
 
+  this.createTitle(planets[value].name)
   this.createParagraph(planets[value].summary);
   this.createSubtitle("Size and Distance");
   this.createParagraph(planets[value].sizeAndDistance);
@@ -69,12 +58,11 @@ PlanetInfoView.prototype.planetInfoRender = function (planets, value) {
   this.createSubtitle("Can have life?");
   this.createParagraph(planets[value].life);
 
-  const moreInfoButton = document.createElement('button');
-  moreInfoButton.textContent = "Go Back";
-  moreInfoButton.addEventListener('click', () => {
+  const goBackButton = this.createButton("Go back");
+  goBackButton.addEventListener('click', () => {
     this.initialRender(planets, value)
   });
-  this.container.appendChild(moreInfoButton);
+  this.container.appendChild(goBackButton);
 
 };
 
@@ -88,6 +76,24 @@ PlanetInfoView.prototype.createSubtitle = function (text) {
   const subtitle = document.createElement('h3');
   subtitle.textContent = text;
   this.container.appendChild(subtitle);
+};
+
+PlanetInfoView.prototype.createTitle = function (text) {
+  const title = document.createElement('h2');
+  title.textContent = text;
+  this.container.appendChild(title);
+};
+
+PlanetInfoView.prototype.createImage = function (src) {
+  const image = document.createElement('img');
+  image.src = src;
+  this.container.appendChild(image);
+};
+
+PlanetInfoView.prototype.createButton = function (text) {
+  const button = document.createElement('button');
+  button.textContent = text;
+  return button;
 };
 
 
