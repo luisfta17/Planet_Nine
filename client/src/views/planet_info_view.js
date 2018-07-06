@@ -3,7 +3,9 @@ const PlanetInfoView = function(container){
 };
 
 PlanetInfoView.prototype.initialRender = function (planets, value) {
-
+    let planetValue = value;
+    this.container.innerHTML = ' ';
+    console.log(value);
     const planetName = document.createElement('h3');
     planetName.textContent = planets[value].name;
     this.container.appendChild(planetName);
@@ -14,11 +16,14 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
 
     const previousButton = document.createElement('button');
     previousButton.textContent = "Previous";
-    if (value === 0) {
-      previousButton.value = planets.length -1
-    } else {
-      previousButton.value = value - 1
-    }
+    previousButton.addEventListener('click', () => {
+      if (planetValue <= 0) {
+        planetValue = planets.length -1
+      } else {
+        planetValue = planetValue - 1
+      }
+      this.initialRender(planets, planetValue)
+    });
     this.container.appendChild(previousButton);
 
     const moreInfoButton = document.createElement('button');
@@ -27,11 +32,15 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
 
     const nextButton = document.createElement('button');
     nextButton.textContent = "Next";
-    if (value === planets.length -1) {
-      nextButton.value = 0
-    } else {
-      nextButton.value = value + 1
-    }
+    nextButton.addEventListener('click', () => {
+      if (value >= planets.length -1) {
+        planetValue = 0
+      } else {
+        planetValue = planetValue + 1
+      }
+      this.initialRender(planets, planetValue)
+    });
+
     this.container.appendChild(nextButton);
 
 };
