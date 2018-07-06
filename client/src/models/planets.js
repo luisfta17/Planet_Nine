@@ -8,8 +8,7 @@ const Planets = function(url){
 
 Planets.prototype.getData = function () {
   const request = new Request(this.url);
-  request.get()
-      .then((planets) => {
+  request.get().then((planets) => {
         PubSub.publish('Planets:data-loaded', planets);
       })
       .catch(console.error);

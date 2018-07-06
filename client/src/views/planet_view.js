@@ -12,7 +12,7 @@ PlanetView.prototype.bindEvents = function () {
 };
 
 PlanetView.prototype.render= function (planets) {
-console.log(planets);
+
   // const name = this.createName(planet.species);
   // sightingContainer.appendChild(species);
   //
