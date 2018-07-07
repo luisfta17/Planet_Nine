@@ -16,21 +16,20 @@ planets.getData();
 const planetView = new PlanetView(displayContainer);
 planetView.bindEvents();
 
-// apodSelector.addEventListener('click', () => {
-//   const apod = new APOD('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
-//   apod.getData();
+apodSelector.addEventListener('click', () => {
+  const apod = new APOD('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
+  apod.getData();
+
+  const apodView = new ApodView(displayContainer);
+  apodView.bindEvents();
+});
 //
-//   const apodView = new ApodView(displayContainer);
-//   apodView.bindEvents();
-// });
-//
-// hubbleSelector.addEventListener('click', () => {
-//   const hubble = new Hubble('http://hubblesite.org/api/v3/image/');
-//   hubble.getData();
-//
-//   const hubbleView = new HubbleView(displayContainer);
-//   hubbleView.bindEvents();
-// });
+hubbleSelector.addEventListener('click', () => {
+  const hubble = new Hubble('http://hubblesite.org/api/v3/image/');
+  hubble.getData();
+  const hubbleView = new HubbleView(displayContainer);
+  hubbleView.bindEvents();
+});
 
 
 });
