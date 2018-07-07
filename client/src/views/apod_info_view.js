@@ -15,15 +15,20 @@ ApodInfoView.prototype.initialRender = function (apod) {
   this.createDate(apod.date);
   this.createExplanation(apod.explanation);
 
+
+  const footer = document.createElement('a');
+  const footerLink = "https://apod.nasa.gov/apod/astropix.html";
+  const footerWording = `Information provided by NASA API`;
+  footer.textContent = footerWording;
+  footer.href = footerLink;
+  this.container.appendChild(footer);
+
   const goBackButton = this.createButton("Go back");
   goBackButton.addEventListener('click', () => {
   window.location = "http://localhost:3000";
   });
   this.container.appendChild(goBackButton);
 
-  const footer = document.createElement('h5');
-  footer.textContent = "Information provided by NASA API which powers https://apod.nasa.gov/apod/astropix.html"
-  this.container.appendChild(footer);
 };
 
 ApodInfoView.prototype.createImage = function (src) {
