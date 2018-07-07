@@ -9,7 +9,6 @@ const Hubble = function(url){
 Hubble.prototype.getData = function () {
   const request = new Request(this.url);
   request.get().then((picture) => {
-    console.log(picture);
     PubSub.publish('Hubble:data-loaded', picture);
   })
   .catch(console.error);

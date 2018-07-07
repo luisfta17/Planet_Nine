@@ -3,7 +3,7 @@ const Planets = require('./models/planets');
 const Hubble = require('./models/hubble');
 const PlanetView = require('./views/planet_view');
 // const ApodView = require('./views/apod_view');
-// const HubbleView = require('./views/hubble_view');
+const HubbleView = require('./views/hubble_view');
 
 document.addEventListener('DOMContentLoaded', () => {
 const displayContainer = document.querySelector('#display-container');
@@ -28,8 +28,8 @@ hubbleSelector.addEventListener('click', () => {
   const hubble = new Hubble('http://localhost:3000/api/hubble');
   hubble.getData();
 
-  // const hubbleView = new HubbleView(displayContainer);
-  // hubbleView.bindEvents();
+  const hubbleView = new HubbleView(displayContainer);
+  hubbleView.bindEvents();
 });
 
 
