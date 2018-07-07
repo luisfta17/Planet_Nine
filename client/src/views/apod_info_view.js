@@ -14,14 +14,16 @@ ApodInfoView.prototype.initialRender = function (apod) {
   this.createImage(apod.hdurl);
   this.createDate(apod.date);
   this.createExplanation(apod.explanation);
-  // this.createButton("Go back");
 
-  // const goBackButton = this.createButton("Go back");
-  // goBackButton.addEventListener('click', () => {
-  //   const plantInfoView = new PlantInfoView(planets, value)
-  //   planetInfoView.initialRender(planets, value)
-  // });
-  // this.container.appendChild(goBackButton);
+  const goBackButton = this.createButton("Go back");
+  goBackButton.addEventListener('click', () => {
+  window.location = "http://localhost:3000";
+  });
+  this.container.appendChild(goBackButton);
+
+  const footer = document.createElement('h5');
+  footer.textContent = "Information provided by NASA API which powers https://apod.nasa.gov/apod/astropix.html"
+  this.container.appendChild(footer);
 };
 
 ApodInfoView.prototype.createImage = function (src) {
@@ -51,7 +53,7 @@ ApodInfoView.prototype.createExplanation = function (text) {
 ApodInfoView.prototype.createButton = function (text) {
     const button = document.createElement('button');
     button.textContent = text;
-    this.container.appendChild(button);
+    return button;
   };
 
 
