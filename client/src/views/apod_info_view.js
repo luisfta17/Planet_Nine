@@ -20,7 +20,24 @@ ApodInfoView.prototype.createImage = function (src) {
   this.container.appendChild(image);
 };
 
+ApodInfoView.prototype.createTitle = function (text) {
+  const title = document.createElement('h3');
+  title.textContent = text;
+  this.container.appendChild(title);
+};
 
+ApodInfoView.prototype.createDate = function (text) {
+  const date = document.createElement('h3');
+  date.textContent = text;
+  this.container.appendChild(date);
+};
+
+ApodInfoView.prototype.createExplanation = function (text) {
+  const explanation = document.createElement('p');
+  explanation.textContent = text;
+  this.container.appendChild(explanation);
+
+};
 
 
 module.exports = ApodInfoView;
