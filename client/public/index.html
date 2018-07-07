@@ -7,22 +7,12 @@
   <title>Planet Nine</title>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li id="align-left">
-        <a href="/">Planet Nine</a>
-      </li>
-      <li>
-        <a> ISS </a>
-      </li>
-      <li>
-        <a id="apod"> APOD </a>
-      </li>
-      <li>
-        <a id="hubble"> Hubble </a>
-      </li>
-      <li>
-    <button class="dropbtn" onclick="myFunction()">PLANETS
+  <div class="navbar">
+  <a href="/">Planet Nine</a>
+  <a> ISS </a>
+  <a id="apod"> APOD </a>
+  <div class="dropdown">
+    <button class="dropbtn">PLANETS
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
@@ -38,9 +28,8 @@
       <a class="dropdown" id="9">Pluto</a>
       <a class="dropdown" id="10">Planet X</a>
     </div>
-    </li>
-    </ul>
-  </nav>
+  </div>
+</div>
 <div id="display-container">
 </div>
 </body>

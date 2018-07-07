@@ -12,15 +12,16 @@ PlanetView.prototype.bindEvents = function () {
      this.renderInitialInfo(this.planets);
   });
 
-    const dropdown = document.querySelectorAll('.dropdown');
+  const dropdown = document.querySelectorAll('.dropdown');
     for (planet of dropdown) {
       planet.addEventListener('click', (evt) =>{
         console.log(evt.target.id);
         const planetInfoView = new PlanetInfoView(this.container);
         planetInfoView.initialRender(this.planets, evt.target.id);
       })
-    }
-};
+    };
+  };
+
 
 
 PlanetView.prototype.renderInitialInfo = function (planets) {
