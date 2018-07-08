@@ -7,25 +7,30 @@
   <title>Planet Nine</title>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li id="align-left">
-        <a href="/">Planet Nine</a>
-      </li>
-      <li>
-        <a> ISS </a>
-      </li>
-      <li>
-        <a id="apod"> APOD </a>
-      </li>
-      <li>
-        <a id="hubble"> Hubble </a>
-      </li>
-      <li>
-        <a> DROPDOWN </a>
-    </li>
-    </ul>
-  </nav>
+  <div class="navbar" class="right">
+  <a href="/">Planet Nine</a>
+  <a> ISS </a>
+  <a id="apod"> APOD </a>
+  <a id="hubble">Hubble</a>
+  <div class="dropdown">
+    <button class="dropbtn" class="right">PLANETS
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a class="dropdown" id="0">Sun</a>
+      <a class="dropdown" id="1">Mercury</a>
+      <a class="dropdown" id="2">Venus</a>
+      <a class="dropdown" id="3">Earth</a>
+      <a class="dropdown" id="4">Mars</a>
+      <a class="dropdown" id="5">Jupiter</a>
+      <a class="dropdown" id="6">Saturn</a>
+      <a class="dropdown" id="7">Uranus</a>
+      <a class="dropdown" id="8">Neptune</a>
+      <a class="dropdown" id="9">Pluto</a>
+      <a class="dropdown" id="10">Planet X</a>
+    </div>
+  </div>
+</div>
 <div id="display-container">
 </div>
 </body>
