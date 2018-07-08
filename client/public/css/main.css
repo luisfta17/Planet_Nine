@@ -12,6 +12,8 @@ img {
 
 
 .navbar {
+  display: flex;
+  justify-content: flex-end;
   overflow: hidden;
   background-color: #333;
   font-family: Arial;
@@ -20,23 +22,12 @@ img {
 
   /* Links inside the navbar */
   .navbar a {
-    float: right;
     font-size: 16px;
     color: white;
-    text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
 
- .right {
-    float: right;
-  }
-
-  /* The dropdown container */
-  .dropdown {
-    float: right;
-    overflow: hidden;
-  }
 
   /* Dropdown button */
   .dropdown .dropbtn {
@@ -67,10 +58,8 @@ img {
 
   /* Links inside the dropdown */
   .dropdown-content a {
-    float: none;
     color: black;
     padding: 12px 16px;
-    text-decoration: none;
     display: block;
     text-align: left;
   }
