@@ -5,7 +5,7 @@ const HubbleInfoView = function(container){
 HubbleInfoView.prototype.initialRender = function (picture) {
   console.log(picture);
   this.createSubtitle(picture.name);
-  this.createImage(picture.image_files[picture.image_files.length - 1].file_url);
+  this.findPngOrJpg(picture, 1);
   if (picture.description) {
     this.createParagraph(picture.description)
   }
@@ -39,11 +39,17 @@ HubbleInfoView.prototype.createTitle = function (text) {
 HubbleInfoView.prototype.findPngOrJpg = function (picture, startPoint) {
   const lastLink = picture.image_files[picture.image_files.length - startPoint].file_url;
   if (this.isPicture(lastLink)) {
+    console.log(lastLink);
     this.createImage(lastLink);
   } else {
     startPoint ++;
     this.findPngOrJpg(picture, startPoint);
   }
+};
+
+HubbleInfoView.prototype.isPicture = function (link) {
+  const linkSplitted = link.split('');
+  return linkSplitted[linkSplitted.length - 1] === "g";
 };
 
 
