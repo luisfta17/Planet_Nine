@@ -1,11 +1,17 @@
+const Hubble = require("../models/hubble.js");
 const HubbleInfoView = function(container){
   this.container = container;
 };
 
 HubbleInfoView.prototype.initialRender = function (picture) {
-  console.log(picture);
   this.createTemplate();
   this.generateRandomPic(picture);
+  const randomButton = this.createButton("Other pic");
+  randomButton.addEventListener('click', () => {
+    const hubble = new Hubble('http://localhost:3000/api/hubble');
+    hubble.getData();
+  });
+  this.container.appendChild(randomButton);
 };
 
 HubbleInfoView.prototype.generateRandomPic = function (picture) {
@@ -44,6 +50,12 @@ HubbleInfoView.prototype.createTitle = function (text) {
   const title = document.createElement('h1');
   title.textContent = text;
   this.container.appendChild(title);
+};
+
+HubbleInfoView.prototype.createButton = function (text) {
+  const button = document.createElement('button');
+  button.textContent = text;
+  return button;
 };
 
 
