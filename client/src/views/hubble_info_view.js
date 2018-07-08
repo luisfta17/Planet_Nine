@@ -6,12 +6,18 @@ const HubbleInfoView = function(container){
 HubbleInfoView.prototype.initialRender = function (picture) {
   this.createTemplate();
   this.generateRandomPic(picture);
+
   const randomButton = this.createButton("Other pic");
   randomButton.addEventListener('click', () => {
-    const hubble = new Hubble('http://localhost:3000/api/hubble');
-    hubble.getData();
+    this.requestNewData();
   });
   this.container.appendChild(randomButton);
+
+  const returnButton = this.createButton("Return to Main Page");
+  returnButton.addEventListener('click', () => {
+    window.location.href = "/";
+  });
+  this.container.appendChild(returnButton);
 };
 
 HubbleInfoView.prototype.generateRandomPic = function (picture) {
@@ -58,7 +64,6 @@ HubbleInfoView.prototype.createButton = function (text) {
   return button;
 };
 
-
 HubbleInfoView.prototype.findPngOrJpg = function (picture, startPoint) {
   const lastLink = picture.image_files[picture.image_files.length - startPoint].file_url;
   if (this.isPicture(lastLink)) {
@@ -72,6 +77,11 @@ HubbleInfoView.prototype.findPngOrJpg = function (picture, startPoint) {
 HubbleInfoView.prototype.isPicture = function (link) {
   const linkSplitted = link.split('');
   return linkSplitted[linkSplitted.length - 1] === "g";
+};
+
+HubbleInfoView.prototype.requestNewData = function () {
+  const hubble = new Hubble('http://localhost:3000/api/hubble');
+  hubble.getData();
 };
 
 HubbleInfoView.prototype.createTemplate = function () {
