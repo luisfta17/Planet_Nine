@@ -154,4 +154,22 @@ db.planets.insertMany([
 
     life: "Neptune's environment is not conducive to life as we know it. The temperatures, pressures and materials that characterize this planet are most likely too extreme and volatile for organisms to adapt to."
   },
+
+  {
+    name: 'Pluto',
+    age: '4.5 billion years',
+    dfe: '7.5 billion kilometers',
+
+    picture:'https://solarsystem.nasa.gov/system/resources/detail_files/855_pluto_lorri_ralph_20150713_2017.jpg',
+
+    summary: "Pluto is a complex and mysterious world with mountains, valleys, plains, craters, and maybe glaciers. Discovered in 1930, Pluto was long considered our solar system's ninth planet. But after the discovery of similar intriguing worlds deeper in the distant Kuiper Belt, icy Pluto was reclassified as a dwarf planet. Pluto is orbited by five known moons, the largest of which is Charon. Charon is about half the size of Pluto itself, making it the largest satellite relative to the planet it orbits in our solar system. Pluto and Charon are often referred to as a double planet. Pluto is named after the Roman god of the underworld.",
+
+    sizeAndDistance: "With a radius of 715 miles (1,151 kilometers), Pluto is about 1/6 the width of Earth. If Earth was the size of a nickel, Pluto would be about as big as a popcorn kernel. From an average distance of 3.7 billion miles (5.9 billion kilometers), Pluto is 39 astronomical units away from the sun. One astronomical unit (abbreviated as AU), is the distance from the sun to Earth. From this distance, it takes sunlight 5.5 hours to travel from the sun to Pluto. If you were to stand on the surface of Pluto at noon, the sun would be 1/900 the brightness it is here on Earth, or about 300 times as bright as our full moon. There is a moment each day near sunset here on Earth when the light is the same brightness as midday on Pluto. Find out when you can experience Pluto time where you live.",
+
+    orbitAndRotation: "Pluto's orbit around the sun is unusual compared to the planets: it's both elliptical and tilted. Pluto's 248-year-long, oval-shaped orbit can take it as far as 49.3 astronomical units (AU) from the sun, and as close as 30 AU. (One AU is the mean distance between Earth and the sun: about 93 million miles or 150 million kilometers.) But on average, Pluto is 3.7 billion miles (5.9 billion kilometers) away from the sun, or 39 AU. From 1979 to 1999, Pluto was near perihelion, when it is closest to the sun. During this time, Pluto was actually closer to the sun than Neptune. One day on Pluto takes about 153 hours. Its axis of rotation is tilted 57 degrees with respect to the plane of its orbit around the sun, so it spins almost on its side. Pluto also exhibits a retrograde rotation; spinning from east to west like Venus and Uranus.",
+
+    formation: "Dwarf planet Pluto is a member of a group of objects that orbit in a disc-like zone beyond the orbit of Neptune called the Kuiper Belt. This distant realm is populated with thousands of miniature icy worlds, which formed early in the history of our solar system about 4.5 billion years ago. These icy, rocky bodies are called Kuiper Belt objects, transneptunian objects, or plutoids.",
+
+    life: "The surface of Pluto is extremely cold, so it seems unlikely that life could exist there. At such cold temperatures, water, which is vital for life as we know it, is essentially rock-like. Pluto's interior is warmer, however, and some think there could even be an ocean deep inside."
+  },
 ]);
