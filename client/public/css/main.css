@@ -19,6 +19,11 @@ img {
   font-family: Arial;
 }
 
+.home {
+  display: flex;
+  flex-grow: 8;
+}
+
 
   /* Links inside the navbar */
   .navbar a {
