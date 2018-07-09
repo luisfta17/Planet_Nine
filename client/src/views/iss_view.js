@@ -1,5 +1,5 @@
 const PubSub = require('../helpers/pub_sub');
-// const ApodInfoView = require('./apod_info_view');
+const IssInfoView = require('./iss_info_view');
 
 const IssView = function(container){
   this.container = container;
@@ -7,16 +7,15 @@ const IssView = function(container){
 
 IssView.prototype.bindEvents = function () {
   PubSub.subscribe('ISS:data-loaded', (evt) => {
-    console.log(evt.detail);
-     // this.renderInitialInfo(evt.detail);
+    this.renderInitialInfo(evt.detail);
   });
 
 };
 
-// IssView.prototype.renderInitialInfo = function (apod) {
-//   this.container.innerHTML = '';
-//   const apodInfoView = new ApodInfoView(this.container);
-//   apodInfoView.initialRender(apod);
-// };
+IssView.prototype.renderInitialInfo = function (iss) {
+  this.container.innerHTML = '';
+  const issInfoView = new IssInfoView(this.container);
+  issInfoView.initialRender(iss);
+};
 
 module.exports = IssView;
