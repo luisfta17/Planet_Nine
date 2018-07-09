@@ -172,4 +172,22 @@ db.planets.insertMany([
 
     life: "The surface of Pluto is extremely cold, so it seems unlikely that life could exist there. At such cold temperatures, water, which is vital for life as we know it, is essentially rock-like. Pluto's interior is warmer, however, and some think there could even be an ocean deep inside."
   },
+
+  {
+    name: 'Planet X',
+    age: 'Unknoun',
+    dfe: 'Unknoun',
+
+    picture:'https://img.gazeta.ru/files3/619/8032619/Planet-9-pic905-895x505-95298.jpg',
+
+    summary: "In January 2015, Caltech astronomers Konstantin Batygin and Mike Brown announced new research that provides evidence of a giant planet tracing an unusual, elongated orbit in the outer solar system. The prediction is based on detailed mathematical modeling and computer simulations, not direct observation. This large object could explain the unique orbits of at least five smaller objects discovered in the distant Kuiper Belt. The possibility of a new planet is certainly an exciting one for me as a planetary scientist and for all of us, said Jim Green, director of NASA's Planetary Science Division. This is not, however, the detection or discovery of a new planet. It's too early to say with certainty there's a so-called Planet X. What we're seeing is an early prediction based on modeling from limited observations. It's the start of a process that could lead to an exciting result.",
+
+    sizeAndDistance: "The Caltech scientists believe Planet X may have has a mass about 10 times that of Earth and be similar in size to Uranus or Neptune. ",
+
+    orbitAndRotation: "The predicted orbit is about 20 times farther from our sun on average than Neptune (which orbits the sun at an average distance of 2.8 billion miles). It would take this new planet between 10,000 and 20,000 years to make just one full orbit around the sun (where Neptune completes an orbit roughly every 165 years).",
+
+    formation: "Caltech researchers have found mathematical evidence suggesting there may be a Planet X deep in the solar system. This hypothetical Neptune-sized planet orbits our sun in a highly elongated orbit far beyond Pluto. The object, which the researchers have nicknamed Planet Nine, could have a mass about 10 times that of Earth and orbit about 20 times farther from the sun on average than Neptune. It may take between 10,000 and 20,000 Earth years to make one full orbit around the sun. The announcement does not mean there is a new planet in our solar system. The existence of this distant world is only theoretical at this point and no direct observation of the object nicknamed have been made. The mathematical prediction of a planet could explain the unique orbits of some smaller objects in the Kuiper Belt, a distant region of icy debris that extends far beyond the orbit of Neptune. Astronomers are now searching for the predicted planet.",
+
+    life: "Uknoun"
+  },
 ]);
