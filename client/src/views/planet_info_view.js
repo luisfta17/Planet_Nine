@@ -5,7 +5,7 @@ const PlanetInfoView = function(container){
 PlanetInfoView.prototype.initialRender = function (planets, value) {
   let planetValue = value;
     console.log(planetValue);
-  let distanceFromEarth = planets[planetValue].dfe;
+  let distanceFromEarth = planets[value].dfe;
   let age = planets[value].age;
   this.container.innerHTML = ' ';
 
