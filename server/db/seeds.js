@@ -175,8 +175,8 @@ db.planets.insertMany([
 
   {
     name: 'Planet X',
-    age: 'Unknoun',
-    dfe: 'Unknoun',
+    age: 'Unknown',
+    dfe: 'Unknown',
 
     picture:'https://img.gazeta.ru/files3/619/8032619/Planet-9-pic905-895x505-95298.jpg',
 
@@ -188,6 +188,6 @@ db.planets.insertMany([
 
     formation: "Caltech researchers have found mathematical evidence suggesting there may be a Planet X deep in the solar system. This hypothetical Neptune-sized planet orbits our sun in a highly elongated orbit far beyond Pluto. The object, which the researchers have nicknamed Planet Nine, could have a mass about 10 times that of Earth and orbit about 20 times farther from the sun on average than Neptune. It may take between 10,000 and 20,000 Earth years to make one full orbit around the sun. The announcement does not mean there is a new planet in our solar system. The existence of this distant world is only theoretical at this point and no direct observation of the object nicknamed have been made. The mathematical prediction of a planet could explain the unique orbits of some smaller objects in the Kuiper Belt, a distant region of icy debris that extends far beyond the orbit of Neptune. Astronomers are now searching for the predicted planet.",
 
-    life: "Uknoun"
+    life: "Unknown"
   },
 ]);
