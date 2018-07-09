@@ -5,6 +5,7 @@ const ISS = require('./models/iss');
 const PlanetView = require('./views/planet_view');
 const ApodView = require('./views/apod_view');
 const HubbleView = require('./views/hubble_view');
+const IssView = require('./views/iss_view');
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -38,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
   issSelector.addEventListener('click', () => {
     const iss = new ISS('http://api.open-notify.org/iss-now.json');
     iss.getData();
+    const issView = new IssView(displayContainer);
+    issView.bindEvents();
   });
 
 });
