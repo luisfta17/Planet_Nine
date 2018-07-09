@@ -6,6 +6,7 @@ const PlanetView = require('./views/planet_view');
 const ApodView = require('./views/apod_view');
 const HubbleView = require('./views/hubble_view');
 const IssView = require('./views/iss_view');
+const APOD_KEY = require('./helpers/apod_key');
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   apodSelector.addEventListener('click', () => {
-    const apod = new APOD('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
+    const apod = new APOD('https://api.nasa.gov/planetary/apod?api_key=' + APOD_KEY);
     apod.getData();
 
     const apodView = new ApodView(displayContainer);

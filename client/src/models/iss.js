@@ -10,11 +10,19 @@ ISS.prototype.getData = function () {
   const request = new Request(this.url);
 
   request.get().then((iss) => {
-        PubSub.publish('ISS:data-loaded', iss);
-      })
-      .catch(console.error);
+    PubSub.publish('ISS:data-loaded', iss);
+  })
+  .catch(console.error);
+};
 
+ISS.prototype.getCurrentData = function () {
+  const request = new Request(this.url);
 
-  };
+  request.get().then((iss) => {
+    PubSub.publish('ISS:current-data-loaded', iss);
+  })
+  .catch(console.error);
+};
+
 
 module.exports = ISS;

@@ -1,15 +1,56 @@
+const ISS = require("../models/iss.js");
+const PubSub = require('../helpers/pub_sub');
+const MAP_KEY = require('../helpers/map_key');
+
 const IssInfoView = function(container){
   this.container = container;
 };
 
 IssInfoView.prototype.initialRender = function (iss) {
   this.createTemplate();
-
+  this.createDiv("mapid");
+  this.createMap(iss);
   const returnButton = this.createButton("Return to Main Page");
   returnButton.addEventListener('click', () => {
     window.location.href = "/";
   });
   this.container.appendChild(returnButton);
+};
+
+
+
+IssInfoView.prototype.createMap = function (iss) {
+  console.log(iss);
+  let latitude = iss.iss_position.latitude
+  let longitude = iss.iss_position.longitude
+  var mymap = L.map('mapid').setView([latitude, longitude], 2);
+
+
+  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets-satellite',
+    accessToken: MAP_KEY
+  }).addTo(mymap);
+  var marker = L.marker([latitude, longitude]).addTo(mymap);
+
+  setInterval(function() {
+    const iss = new ISS('http://api.open-notify.org/iss-now.json');
+    iss.getCurrentData();
+  }, 3000);
+
+  PubSub.subscribe('ISS:current-data-loaded', (evt) => {
+    var lat = (evt.detail.iss_position.latitude);
+    var lng = (evt.detail.iss_position.longitude);
+    var newLatLng = new L.LatLng(lat, lng);
+    marker.setLatLng(newLatLng);
+  });
+};
+
+IssInfoView.prototype.createMarker = function (iss) {
+  let latitude = iss.iss_position.latitude
+  let longitude = iss.iss_position.longitude
+  var marker = L.marker([latitude, longitude]).addTo(mymap);
 };
 
 
@@ -42,6 +83,12 @@ IssInfoView.prototype.createTitle = function (text) {
   const title = document.createElement('h1');
   title.textContent = text;
   this.container.appendChild(title);
+};
+
+IssInfoView.prototype.createDiv = function (id) {
+  const div= document.createElement('div');
+  div.id = id;
+  this.container.appendChild(div);
 };
 
 IssInfoView.prototype.createButton = function (text) {

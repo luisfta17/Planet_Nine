@@ -5,6 +5,8 @@ body {
   margin: 0;
 }
 
+#mapid { height: 400px; }
+
 img {
   height: 300px;
   width: auto;
