@@ -17,7 +17,10 @@ ApodInfoView.prototype.initialRender = function (apod) {
     this.createImage(apod.hdurl);
   }
   this.createDate(apod.date);
-  this.createExplanation(apod.explanation);
+  this.createDiv("text-template");
+  const textTemplateSelector = document.querySelector("#text-template")
+  textTemplateSelector.classList.add("container")
+  this.createExplanation(apod.explanation, textTemplateSelector);
 
 
   const footer = document.createElement('a');
@@ -33,6 +36,12 @@ ApodInfoView.prototype.initialRender = function (apod) {
   });
   this.container.appendChild(goBackButton);
 
+};
+
+ApodInfoView.prototype.createDiv = function (id) {
+  const div= document.createElement('div');
+  div.id = id;
+  this.container.appendChild(div);
 };
 
 ApodInfoView.prototype.createVideo = function (src) {
@@ -65,10 +74,10 @@ ApodInfoView.prototype.createDate = function (text) {
   this.container.appendChild(date);
 };
 
-ApodInfoView.prototype.createExplanation = function (text) {
+ApodInfoView.prototype.createExplanation = function (text, container) {
   const explanation = document.createElement('p');
   explanation.textContent = text;
-  this.container.appendChild(explanation);
+  container.appendChild(explanation);
 };
 
 ApodInfoView.prototype.createButton = function (text) {
