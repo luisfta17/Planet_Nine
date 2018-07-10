@@ -106,6 +106,8 @@ IssInfoView.prototype.addVideo = function () {
   iframe.scrolling = "no";
   iframe.style = "border: 0 none transparent;";
   iframe.frameborder = "0";
+  iframe.classList.add("block");
+  iframe.classList.add("center");
   iframe.allowfullscreen = true;
   iframe.webkitallowfullscreen = true;
   this.container.appendChild(iframe);
@@ -115,6 +117,7 @@ IssInfoView.prototype.addVideo = function () {
 IssInfoView.prototype.createButton = function (text) {
   const button = document.createElement('button');
   button.textContent = text;
+  button.classList.add("center");
   return button;
 };
 

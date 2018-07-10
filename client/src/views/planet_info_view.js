@@ -92,6 +92,7 @@ PlanetInfoView.prototype.createTitle = function (text) {
 PlanetInfoView.prototype.createImage = function (src) {
   const image = document.createElement('img');
   image.src = src;
+  image.id = "planet-picture"
   this.container.appendChild(image);
 };
 

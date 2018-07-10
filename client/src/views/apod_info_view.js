@@ -49,6 +49,7 @@ ApodInfoView.prototype.createVideo = function (src) {
 ApodInfoView.prototype.createImage = function (src) {
   const image = document.createElement('img');
   image.src = src;
+  image.id = "apod-picture"
   this.container.appendChild(image);
 };
 
@@ -73,6 +74,8 @@ ApodInfoView.prototype.createExplanation = function (text) {
 ApodInfoView.prototype.createButton = function (text) {
     const button = document.createElement('button');
     button.textContent = text;
+    button.classList.add("block");
+    button.classList.add("center");
     return button;
   };
 

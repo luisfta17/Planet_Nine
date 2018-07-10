@@ -1,23 +1,50 @@
 body {
-  background: black;
-  color: white;
   text-align: center;
   margin: 0;
+  background-image: url("https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg");
+  background-size: cover;
+  background-position: center;
+  font-family: leto;
+  color: white;
 }
 
 #mapid { height: 400px; }
 
-img {
-  height: 300px;
+#planet-picture {
+  height: 560px;
   width: auto;
-  }
+}
 
+#hubble-picture {
+  height: 600px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#apod-picture {
+  height: 600px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+.block {
+  display: block;
+
+}
 
 .navbar {
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
-  background-color: #333;
+  background-color: transparent;
   font-family: Arial;
 }
 
@@ -27,56 +54,56 @@ img {
 }
 
 
-  /* Links inside the navbar */
-  .navbar a {
-    font-size: 16px;
-    color: white;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
+/* Links inside the navbar */
+.navbar a {
+  font-size: 16px;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
 
-  /* Dropdown button */
-  .dropdown .dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit; /* Important for vertical align on mobile phones */
-    margin: 0; /* Important for vertical align on mobile phones */
-  }
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
 
-  /* Add a red background color to navbar links on hover */
-  .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: black;
-  }
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: gray;
+}
 
-  /* Dropdown content (hidden by default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
 
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    display: block;
-    text-align: left;
-  }
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+}
 
-  /* Add a grey background color to dropdown links on hover */
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
 
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}

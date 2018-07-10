@@ -31,6 +31,8 @@ HubbleInfoView.prototype.generateRandomPic = function (picture) {
 HubbleInfoView.prototype.createImage = function (src) {
   const image = document.createElement('img');
   image.src = src;
+  image.id = "hubble-picture"
+  image.classList.add("block");
   this.container.appendChild(image);
 };
 
