@@ -17,7 +17,7 @@ HubbleInfoView.prototype.initialRender = function (picture) {
   pictureTemplateSelector.classList.add("container");
 
   if (picture.description) {
-    this.createParagraph(picture.description, pictureTemplateSelector)
+    this.createParagraph(picture.description, pictureTemplateSelector);
   }
 
   const randomButton = this.createButton("Other pic");
@@ -48,7 +48,7 @@ HubbleInfoView.prototype.generateRandomPic = function (picture) {
 HubbleInfoView.prototype.createImage = function (src) {
   const image = document.createElement('img');
   image.src = src;
-  image.id = "hubble-picture"
+  image.id = "hubble-picture";
   image.classList.add("block");
   this.container.appendChild(image);
 };
@@ -105,10 +105,10 @@ HubbleInfoView.prototype.requestNewData = function () {
 
 HubbleInfoView.prototype.createTemplate = function (container) {
   this.createTitle("What Is the Hubble Space Telescope?", container);
-  this.createParagraph("The Hubble Space Telescope is a large telescope in space. It was launched into orbit by space shuttle Discovery on April 24, 1990. Hubble orbits about 547 kilometers (340 miles) above Earth. It is the length of a large school bus and weighs as much as two adult elephants. Hubble travels about 5 miles per second: That is like traveling from the eastern coast of the United States to the western coast in 10 minutes. Hubble is solar-powered. Hubble takes sharp pictures of objects in the sky such as planets, stars and galaxies. Hubble has made more than one million observations. These include detailed pictures of the birth and death of stars, galaxies billions of light years away, and comet pieces crashing into Jupiter's atmosphere. Scientists have learned a lot about the universe from these pictures. Many of them are beautiful to look at.", container)
+  this.createParagraph("As the name suggests, the Hubble Space Telescope is a large telescope in space. Launched into orbit by space shuttle Discovery on April 24, 1990, Hubble orbits about 547 kilometers (340 miles) above Earth, travelling about 5 miles per second. Hubble is solar-powered and takes sharp pictures of objects in the sky such as planets, stars and galaxies. Included in Hubble's more than one million observations are detailed pictures of the birth and death of stars, galaxies billions of light years away, and comet pieces crashing into Jupiter's atmosphere. Scientists have learned a lot about the universe from these pictures, and many of them are beautiful to look at.", container);
   this.createSubtitle("What Are Hubble's Most Important Discoveries?", container);
-  this.createParagraph("Images taken by Hubble have helped scientists estimate the age and size of the universe. Scientists believe the universe is almost 14 billion years old. Hubble has helped scientists understand how planets and galaxies form. An image called 'Hubble Ultra Deep Field' shows the farthest galaxies ever seen. Hubble has detected black holes, which suck in everything around them, including light. The telescope has played a key role in the discovery of dark energy, a mysterious force that causes the universe to expand faster and faster as time goes on. And it has revealed details of gamma-ray bursts -- powerful explosions of energy that occur when massive stars collapse. Hubble has also studied the atmospheres of planets revolving around stars similar to Earth’s sun.", container)
-  this.createSubtitle("Random picture taken from Hubble Space Telescope, powered by NASA - HubbleSite.org ", container)
+  this.createParagraph("Images taken by Hubble have helped scientists estimate the age and size of the universe, and have helped scientists understand how planets and galaxies form. It is believed the universe is almost 14 billion years old. An image called 'Hubble Ultra Deep Field' shows the farthest galaxies ever seen. Hubble has detected black holes, which suck in everything around them, including light. The telescope has played a key role in the discovery of dark energy, a mysterious force that causes the universe to expand faster and faster as time goes on. And it has revealed details of gamma-ray bursts -- powerful explosions of energy that occur when massive stars collapse. Hubble has also studied the atmospheres of planets revolving around stars similar to Earth’s sun.", container);
+  this.createSubtitle("Random picture taken from Hubble Space Telescope, powered by NASA - HubbleSite.org ", container);
 };
 
 
