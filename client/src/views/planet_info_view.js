@@ -6,7 +6,7 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
   let planetValue = value;
   console.log(planetValue);
   let distanceFromEarth = planets[value].dfe;
-  let age = planets[value].age;
+  let radius = planets[value].radius;
   this.container.innerHTML = ' ';
 
   this.createTitle(planets[value].name)
@@ -16,7 +16,7 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
     this.createImage(planets[value].picture)
   }
   this.createParagraph(`Distance from Earth: ${distanceFromEarth}`);
-  this.createParagraph(`Age: ${age}`);
+  this.createParagraph(`Size: ${size}`);
 
   const previousButton = this.createButton("Previous")
   previousButton.addEventListener('click', () => {
@@ -54,8 +54,6 @@ PlanetInfoView.prototype.planetInfoRender = function (planets, value) {
 
   this.createTitle(planets[value].name)
   this.createParagraph(planets[value].summary);
-  this.createSubtitle("Size and Distance");
-  this.createParagraph(planets[value].sizeAndDistance);
   this.createSubtitle("Orbit and Rotation");
   this.createParagraph(planets[value].orbitAndRotation);
   this.createSubtitle("Formation");
