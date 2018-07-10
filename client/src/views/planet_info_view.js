@@ -10,15 +10,10 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
   this.container.innerHTML = ' ';
 
   this.createTitle(planets[value].name)
-  if (planets[value].gif) {
-    this.createImage(planets[value].gif)
-  }else {
-    this.createImage(planets[value].picture)
-  }
-  this.createParagraph(`Distance from Earth: ${distanceFromEarth}`);
-  this.createParagraph(`Age: ${age}`);
 
-  const previousButton = this.createButton("Previous")
+
+  const previousButton = this.createButton("≺")
+  previousButton.classList.add("arrow");
   previousButton.addEventListener('click', () => {
     if (planetValue <= 0) {
       planetValue = planets.length -1
@@ -27,15 +22,16 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
     }
     this.initialRender(planets, planetValue)
   });
+
   this.container.appendChild(previousButton);
+  if (planets[value].gif) {
+    this.createImage(planets[value].gif)
+  }else {
+    this.createImage(planets[value].picture)
+  }
 
-  const moreInfoButton = this.createButton("More info");
-  moreInfoButton.addEventListener('click', () => {
-    this.planetInfoRender(planets, planetValue)
-  });
-  this.container.appendChild(moreInfoButton);
-
-  const nextButton = this.createButton("Next")
+  const nextButton = this.createButton("≻")
+  nextButton.classList.add("arrow");
   nextButton.addEventListener('click', () => {
     if (value >= planets.length -1) {
       planetValue = 0
@@ -44,8 +40,19 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
     }
     this.initialRender(planets, planetValue)
   });
+    this.container.appendChild(nextButton);
 
-  this.container.appendChild(nextButton);
+  this.createParagraph(`Distance from Earth: ${distanceFromEarth}`);
+  this.createParagraph(`Age: ${age}`);
+
+
+
+  const moreInfoButton = this.createButton("More info");
+  moreInfoButton.addEventListener('click', () => {
+    this.planetInfoRender(planets, planetValue)
+  });
+  this.container.appendChild(moreInfoButton);
+
 };
 
 
