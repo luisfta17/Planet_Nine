@@ -51,7 +51,7 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
 
 PlanetInfoView.prototype.planetInfoRender = function (planets, value) {
   this.container.innerHTML = " ";
-
+  this.container.classList.add("container")
   this.createTitle(planets[value].name)
   this.createParagraph(planets[value].summary);
   this.createSubtitle("Size and Distance");
@@ -65,6 +65,7 @@ PlanetInfoView.prototype.planetInfoRender = function (planets, value) {
 
   const goBackButton = this.createButton("Go back");
   goBackButton.addEventListener('click', () => {
+    this.container.className = ""
     this.initialRender(planets, value)
   });
   this.container.appendChild(goBackButton);

@@ -35,6 +35,15 @@ body {
   margin-top: 10px;
 }
 
+.container {
+  background: transparent;
+  width: 75%;
+  margin-left: 185px;
+  /* border: solid white;
+  border-radius: 1%; */
+  color: white;
+}
+
 .block {
   display: block;
 

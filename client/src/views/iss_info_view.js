@@ -7,14 +7,22 @@ const IssInfoView = function(container){
 };
 
 IssInfoView.prototype.initialRender = function (iss) {
-  this.createTemplate();
+  this.createDiv("text-template");
+  const textTemplateSelector = document.querySelector("#text-template")
+  textTemplateSelector.classList.add("container")
+  this.createTemplate(textTemplateSelector);
   this.createDiv("mapid");
   this.createMap(iss);
-  this.createVideoTemplate();
+
+  this.createDiv("video-template");
+  const videoTemplateSelector = document.querySelector("#video-template")
+  videoTemplateSelector.classList.add("container")
+
+  this.createVideoTemplate(videoTemplateSelector);
 
   const returnButton = this.createButton("Return to Main Page");
   returnButton.addEventListener('click', () => {
-    window.location.href = "/";
+    window.location.href = "/universe";
   });
   this.container.appendChild(returnButton);
 };
@@ -62,34 +70,34 @@ IssInfoView.prototype.createMarker = function (iss) {
 
 
 
-IssInfoView.prototype.createImage = function (src) {
+IssInfoView.prototype.createImage = function (src, container) {
   const image = document.createElement('img');
   image.src = src;
-  this.container.appendChild(image);
+  container.appendChild(image);
 };
 
-IssInfoView.prototype.createParagraph = function (text) {
+IssInfoView.prototype.createParagraph = function (text, container) {
   const paragraph = document.createElement('p');
   paragraph.textContent = text;
-  this.container.appendChild(paragraph);
+  container.appendChild(paragraph);
 };
 
-IssInfoView.prototype.createSubtitle = function (text) {
+IssInfoView.prototype.createSubtitle = function (text, container) {
   const subtitle = document.createElement('h3');
   subtitle.textContent = text;
-  this.container.appendChild(subtitle);
+  container.appendChild(subtitle);
 };
 
-IssInfoView.prototype.createSmallSubtitle = function (text) {
+IssInfoView.prototype.createSmallSubtitle = function (text, container) {
   const subtitle = document.createElement('h4');
   subtitle.textContent = text;
-  this.container.appendChild(subtitle);
+  container.appendChild(subtitle);
 };
 
-IssInfoView.prototype.createTitle = function (text) {
+IssInfoView.prototype.createTitle = function (text, container) {
   const title = document.createElement('h1');
   title.textContent = text;
-  this.container.appendChild(title);
+  container.appendChild(title);
 };
 
 IssInfoView.prototype.createDiv = function (id) {
@@ -121,21 +129,20 @@ IssInfoView.prototype.createButton = function (text) {
   return button;
 };
 
-IssInfoView.prototype.createVideoTemplate = function () {
-  this.createSubtitle("High Definition Earth-Viewing System (HDEV)");
-  this.createParagraph("Below is a live view of Earth taken by a camera on the International Space Station, a view similar to that astronauts get from above. Without Earth’s atmosphere to protect us, people and equipment endure the full barrage of cosmic rays and solar radiation. The images are part of the NASA HDEV experiment that is looking at how fast these harmful rays degrade the image through camera and equipment damage. Sometimes the image is black because the Space Station does not have continuous radio contact with ground control. In that case, check back later.")
-  this.createSubtitle("Live Video:")
+IssInfoView.prototype.createVideoTemplate = function (container) {
+  this.createSubtitle("High Definition Earth-Viewing System (HDEV)", container);
+  this.createParagraph("Below is a live view of Earth taken by a camera on the International Space Station, a view similar to that astronauts get from above. Without Earth’s atmosphere to protect us, people and equipment endure the full barrage of cosmic rays and solar radiation. The images are part of the NASA HDEV experiment that is looking at how fast these harmful rays degrade the image through camera and equipment damage. Sometimes the image is black because the Space Station does not have continuous radio contact with ground control. In that case, check back later.", container)
+  this.createSubtitle("Live Video:", container)
   this.addVideo();
 };
 
 
-IssInfoView.prototype.createTemplate = function () {
-  this.createTitle("International Space Station");
-  this.createParagraph("The International Space Station (ISS) is a multi-nation construction project that is the largest single structure humans ever put into space. Its main construction was completed between 1998 and 2011, although the station continually evolves to include new missions and experiments. It has been continuously occupied since Nov. 2, 2000.As of January 2018, 230 individuals from 18 countries have visited the International Space Station. Top participating countries include the United States (145 people) and Russia (46 people). Astronaut time and research time on the space station is allocated to space agencies according to how much money or resources (such as modules or robotics) that they contribute. The ISS includes contributions from 15 nations. NASA (United States), Roscosmos (Russia) and the European Space Agency are the major partners of the space station who contribute most of the funding; the other partners are the Japanese Aerospace Exploration Agency and the Canadian Space Agency.Current plans call for the space station to be operated through at least 2024, with the partners discussing a possible extension until 2028. Afterwards, plans for the space station are not clearly laid out. It could be deorbited, or recycled for future space stations in orbit.");
-
-  this.createSubtitle("How fast it moves?");
-  this.createParagraph("The International Space Station with ESA’s Columbus laboratory flies 400 km high at speeds that defy gravity – literally. At 28 800 km/h it only takes 90 minutes for the weightless laboratory to make a complete circuit of Earth. Astronauts working and living on the Station experience 16 sunrises and sunsets each day.")
-  this.createSubtitle("ISS Live Location:")
+IssInfoView.prototype.createTemplate = function (container) {
+  this.createTitle("International Space Station", container);
+  this.createParagraph("The International Space Station (ISS) is a multi-nation construction project that is the largest single structure humans ever put into space. Its main construction was completed between 1998 and 2011, although the station continually evolves to include new missions and experiments. It has been continuously occupied since Nov. 2, 2000.As of January 2018, 230 individuals from 18 countries have visited the International Space Station. Top participating countries include the United States (145 people) and Russia (46 people). Astronaut time and research time on the space station is allocated to space agencies according to how much money or resources (such as modules or robotics) that they contribute. The ISS includes contributions from 15 nations. NASA (United States), Roscosmos (Russia) and the European Space Agency are the major partners of the space station who contribute most of the funding; the other partners are the Japanese Aerospace Exploration Agency and the Canadian Space Agency.Current plans call for the space station to be operated through at least 2024, with the partners discussing a possible extension until 2028. Afterwards, plans for the space station are not clearly laid out. It could be deorbited, or recycled for future space stations in orbit.", container);
+  this.createSubtitle("How fast it moves?", container);
+  this.createParagraph("The International Space Station with ESA’s Columbus laboratory flies 400 km high at speeds that defy gravity – literally. At 28 800 km/h it only takes 90 minutes for the weightless laboratory to make a complete circuit of Earth. Astronauts working and living on the Station experience 16 sunrises and sunsets each day.", container)
+  this.createSubtitle("ISS Live Location:", container)
 };
 
 
