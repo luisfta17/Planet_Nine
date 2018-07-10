@@ -33,7 +33,13 @@ IssInfoView.prototype.createMap = function (iss) {
     id: 'mapbox.streets-satellite',
     accessToken: MAP_KEY
   }).addTo(mymap);
-  var marker = L.marker([latitude, longitude]).addTo(mymap);
+
+  var issIcon = L.icon({
+      iconUrl: 'https://i.imgur.com/BOM9ntO.png',
+      iconSize: [40, 65]
+  });
+
+  var marker = L.marker([latitude, longitude], {icon: issIcon}).addTo(mymap);
 
   setInterval(function() {
     const iss = new ISS('http://api.open-notify.org/iss-now.json');
@@ -51,7 +57,7 @@ IssInfoView.prototype.createMap = function (iss) {
 IssInfoView.prototype.createMarker = function (iss) {
   let latitude = iss.iss_position.latitude
   let longitude = iss.iss_position.longitude
-  var marker = L.marker([latitude, longitude]).addTo(mymap);
+  var marker = L.marker([latitude, longitude], {icon: issIcon}).addTo(mymap);
 };
 
 
