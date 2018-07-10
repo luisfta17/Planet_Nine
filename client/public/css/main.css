@@ -1,7 +1,8 @@
 body {
   text-align: center;
   margin: 0;
-  background-image: url("https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg");
+  /* background-image: url("https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg"); */
+  background-image: url("https://darthmojo.files.wordpress.com/2009/03/bsg-stars.png");
   background-size: cover;
   background-position: center;
   font-family: leto;
@@ -29,15 +30,28 @@ body {
   margin-right: auto;
 }
 
-.arrow {
+.arrow-right {
   text-decoration: none;
   border: none;
   background: transparent;
   color: white;
   font-size: 150px;
   display: inline-block;
-  margin-bottom: auto;
-  margin-bottom: auto;
+  position: absolute;
+  top: 40%;
+  right: 10%;
+}
+
+.arrow-left {
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 150px;
+  display: inline-block;
+  position: absolute;
+  top: 40%;
+  left: 10%;
 }
 
 .center {

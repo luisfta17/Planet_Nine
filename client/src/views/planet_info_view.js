@@ -13,7 +13,7 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
 
 
   const previousButton = this.createButton("≺")
-  previousButton.classList.add("arrow");
+  previousButton.classList.add("arrow-left");
   previousButton.addEventListener('click', () => {
     if (planetValue <= 0) {
       planetValue = planets.length -1
@@ -31,7 +31,7 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
   }
 
   const nextButton = this.createButton("≻")
-  nextButton.classList.add("arrow");
+  nextButton.classList.add("arrow-right");
   nextButton.addEventListener('click', () => {
     if (value >= planets.length -1) {
       planetValue = 0
