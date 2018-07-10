@@ -25,7 +25,7 @@ IssInfoView.prototype.createMap = function (iss) {
   console.log(iss);
   let latitude = iss.iss_position.latitude
   let longitude = iss.iss_position.longitude
-  var mymap = L.map('mapid').setView([latitude, longitude], 3);
+  var mymap = L.map('mapid', { scrollWheelZoom:false }).setView([latitude, longitude], 3);
 
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
