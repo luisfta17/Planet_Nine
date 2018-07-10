@@ -4,8 +4,21 @@ const HubbleInfoView = function(container){
 };
 
 HubbleInfoView.prototype.initialRender = function (picture) {
-  this.createTemplate();
+  this.createDiv("text-template");
+  const textTemplateSelector = document.querySelector("#text-template");
+  textTemplateSelector.classList.add("container");
+
+  this.createTemplate(textTemplateSelector);
+
   this.generateRandomPic(picture);
+
+  this.createDiv("picture-template");
+  const pictureTemplateSelector = document.querySelector("#picture-template");
+  pictureTemplateSelector.classList.add("container");
+
+  if (picture.description) {
+    this.createParagraph(picture.description, pictureTemplateSelector)
+  }
 
   const randomButton = this.createButton("Other pic");
   randomButton.addEventListener('click', () => {
@@ -13,19 +26,23 @@ HubbleInfoView.prototype.initialRender = function (picture) {
   });
   this.container.appendChild(randomButton);
 
+
   const returnButton = this.createButton("Return to Main Page");
   returnButton.addEventListener('click', () => {
-    window.location.href = "/";
+    window.location.href = "/universe";
   });
   this.container.appendChild(returnButton);
+};
+
+HubbleInfoView.prototype.createDiv = function (id) {
+  const div= document.createElement('div');
+  div.id = id;
+  this.container.appendChild(div);
 };
 
 HubbleInfoView.prototype.generateRandomPic = function (picture) {
   this.createSmallSubtitle(picture.name);
   this.findPngOrJpg(picture, 1);
-  if (picture.description) {
-    this.createParagraph(picture.description)
-  }
 };
 
 HubbleInfoView.prototype.createImage = function (src) {
@@ -36,16 +53,16 @@ HubbleInfoView.prototype.createImage = function (src) {
   this.container.appendChild(image);
 };
 
-HubbleInfoView.prototype.createParagraph = function (text) {
+HubbleInfoView.prototype.createParagraph = function (text, container) {
   const paragraph = document.createElement('p');
   paragraph.textContent = text;
-  this.container.appendChild(paragraph);
+  container.appendChild(paragraph);
 };
 
-HubbleInfoView.prototype.createSubtitle = function (text) {
+HubbleInfoView.prototype.createSubtitle = function (text, container) {
   const subtitle = document.createElement('h3');
   subtitle.textContent = text;
-  this.container.appendChild(subtitle);
+  container.appendChild(subtitle);
 };
 
 HubbleInfoView.prototype.createSmallSubtitle = function (text) {
@@ -54,10 +71,10 @@ HubbleInfoView.prototype.createSmallSubtitle = function (text) {
   this.container.appendChild(subtitle);
 };
 
-HubbleInfoView.prototype.createTitle = function (text) {
+HubbleInfoView.prototype.createTitle = function (text, container) {
   const title = document.createElement('h1');
   title.textContent = text;
-  this.container.appendChild(title);
+  container.appendChild(title);
 };
 
 HubbleInfoView.prototype.createButton = function (text) {
@@ -86,12 +103,12 @@ HubbleInfoView.prototype.requestNewData = function () {
   hubble.getData();
 };
 
-HubbleInfoView.prototype.createTemplate = function () {
-  this.createTitle("What Is the Hubble Space Telescope?");
-  this.createParagraph("The Hubble Space Telescope is a large telescope in space. It was launched into orbit by space shuttle Discovery on April 24, 1990. Hubble orbits about 547 kilometers (340 miles) above Earth. It is the length of a large school bus and weighs as much as two adult elephants. Hubble travels about 5 miles per second: That is like traveling from the eastern coast of the United States to the western coast in 10 minutes. Hubble is solar-powered. Hubble takes sharp pictures of objects in the sky such as planets, stars and galaxies. Hubble has made more than one million observations. These include detailed pictures of the birth and death of stars, galaxies billions of light years away, and comet pieces crashing into Jupiter's atmosphere. Scientists have learned a lot about the universe from these pictures. Many of them are beautiful to look at.")
-  this.createSubtitle("What Are Hubble's Most Important Discoveries?");
-  this.createParagraph("Images taken by Hubble have helped scientists estimate the age and size of the universe. Scientists believe the universe is almost 14 billion years old. Hubble has helped scientists understand how planets and galaxies form. An image called 'Hubble Ultra Deep Field' shows the farthest galaxies ever seen. Hubble has detected black holes, which suck in everything around them, including light. The telescope has played a key role in the discovery of dark energy, a mysterious force that causes the universe to expand faster and faster as time goes on. And it has revealed details of gamma-ray bursts -- powerful explosions of energy that occur when massive stars collapse. Hubble has also studied the atmospheres of planets revolving around stars similar to Earth’s sun.")
-  this.createSubtitle("Random picture taken from Hubble Space Telescope, powered by NASA - HubbleSite.org ")
+HubbleInfoView.prototype.createTemplate = function (container) {
+  this.createTitle("What Is the Hubble Space Telescope?", container);
+  this.createParagraph("The Hubble Space Telescope is a large telescope in space. It was launched into orbit by space shuttle Discovery on April 24, 1990. Hubble orbits about 547 kilometers (340 miles) above Earth. It is the length of a large school bus and weighs as much as two adult elephants. Hubble travels about 5 miles per second: That is like traveling from the eastern coast of the United States to the western coast in 10 minutes. Hubble is solar-powered. Hubble takes sharp pictures of objects in the sky such as planets, stars and galaxies. Hubble has made more than one million observations. These include detailed pictures of the birth and death of stars, galaxies billions of light years away, and comet pieces crashing into Jupiter's atmosphere. Scientists have learned a lot about the universe from these pictures. Many of them are beautiful to look at.", container)
+  this.createSubtitle("What Are Hubble's Most Important Discoveries?", container);
+  this.createParagraph("Images taken by Hubble have helped scientists estimate the age and size of the universe. Scientists believe the universe is almost 14 billion years old. Hubble has helped scientists understand how planets and galaxies form. An image called 'Hubble Ultra Deep Field' shows the farthest galaxies ever seen. Hubble has detected black holes, which suck in everything around them, including light. The telescope has played a key role in the discovery of dark energy, a mysterious force that causes the universe to expand faster and faster as time goes on. And it has revealed details of gamma-ray bursts -- powerful explosions of energy that occur when massive stars collapse. Hubble has also studied the atmospheres of planets revolving around stars similar to Earth’s sun.", container)
+  this.createSubtitle("Random picture taken from Hubble Space Telescope, powered by NASA - HubbleSite.org ", container)
 };
 
 
