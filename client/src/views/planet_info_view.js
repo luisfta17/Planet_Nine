@@ -16,7 +16,7 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
     this.createImage(planets[value].picture)
   }
   this.createParagraph(`Distance from Earth: ${distanceFromEarth}`);
-  this.createParagraph(`Size: ${size}`);
+  this.createParagraph(`Radius: ${radius}`);
 
   const previousButton = this.createButton("Previous")
   previousButton.addEventListener('click', () => {
