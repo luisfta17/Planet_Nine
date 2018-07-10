@@ -10,17 +10,6 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
   this.container.innerHTML = ' ';
 
   this.createTitle(planets[value].name)
-<<<<<<< HEAD
-  if (planets[value].gif) {
-    this.createImage(planets[value].gif)
-  }else {
-    this.createImage(planets[value].picture)
-  }
-  this.createParagraph(`Distance from Earth: ${distanceFromEarth}`);
-  this.createParagraph(`Radius: ${radius}`);
-=======
->>>>>>> develop
-
 
   const previousButton = this.createButton("≺")
   previousButton.classList.add("arrow-left");
@@ -32,14 +21,13 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
     }
     this.initialRender(planets, planetValue)
   });
+    this.container.appendChild(previousButton);
 
-  this.container.appendChild(previousButton);
   if (planets[value].gif) {
     this.createImage(planets[value].gif)
   }else {
     this.createImage(planets[value].picture)
   }
-
   const nextButton = this.createButton("≻")
   nextButton.classList.add("arrow-right");
   nextButton.addEventListener('click', () => {
@@ -50,12 +38,10 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
     }
     this.initialRender(planets, planetValue)
   });
-    this.container.appendChild(nextButton);
-
-    this.createParagraph(`Distance from Earth: ${distanceFromEarth}`);
-    this.createParagraph(`Radius: ${radius}`);
-
-
+  
+  this.container.appendChild(nextButton);
+  this.createParagraph(`Distance from Earth: ${distanceFromEarth}`);
+  this.createParagraph(`Radius: ${radius}`);
 
   const moreInfoButton = this.createButton("More info");
   moreInfoButton.addEventListener('click', () => {
