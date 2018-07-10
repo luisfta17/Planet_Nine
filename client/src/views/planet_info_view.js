@@ -10,6 +10,7 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
   this.container.innerHTML = ' ';
 
   this.createTitle(planets[value].name)
+<<<<<<< HEAD
   if (planets[value].gif) {
     this.createImage(planets[value].gif)
   }else {
@@ -17,8 +18,12 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
   }
   this.createParagraph(`Distance from Earth: ${distanceFromEarth}`);
   this.createParagraph(`Radius: ${radius}`);
+=======
+>>>>>>> develop
 
-  const previousButton = this.createButton("Previous")
+
+  const previousButton = this.createButton("≺")
+  previousButton.classList.add("arrow-left");
   previousButton.addEventListener('click', () => {
     if (planetValue <= 0) {
       planetValue = planets.length -1
@@ -27,15 +32,16 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
     }
     this.initialRender(planets, planetValue)
   });
+
   this.container.appendChild(previousButton);
+  if (planets[value].gif) {
+    this.createImage(planets[value].gif)
+  }else {
+    this.createImage(planets[value].picture)
+  }
 
-  const moreInfoButton = this.createButton("More info");
-  moreInfoButton.addEventListener('click', () => {
-    this.planetInfoRender(planets, planetValue)
-  });
-  this.container.appendChild(moreInfoButton);
-
-  const nextButton = this.createButton("Next")
+  const nextButton = this.createButton("≻")
+  nextButton.classList.add("arrow-right");
   nextButton.addEventListener('click', () => {
     if (value >= planets.length -1) {
       planetValue = 0
@@ -44,8 +50,19 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
     }
     this.initialRender(planets, planetValue)
   });
+    this.container.appendChild(nextButton);
 
-  this.container.appendChild(nextButton);
+    this.createParagraph(`Distance from Earth: ${distanceFromEarth}`);
+    this.createParagraph(`Radius: ${radius}`);
+
+
+
+  const moreInfoButton = this.createButton("More info");
+  moreInfoButton.addEventListener('click', () => {
+    this.planetInfoRender(planets, planetValue)
+  });
+  this.container.appendChild(moreInfoButton);
+
 };
 
 
