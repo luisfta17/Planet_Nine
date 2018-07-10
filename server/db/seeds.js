@@ -19,6 +19,7 @@ db.planets.insertMany([
     dfe: '77 million kilometers',
 
     picture: 'https://solarsystem.nasa.gov/system/resources/detail_files/771_PIA16853.jpg',
+    gif:'https://media.giphy.com/media/l0HlO4V8iCRME3i0g/giphy.gif',
 
     summary: "The smallest planet in our solar system and nearest to the Sun, Mercury is only slightly larger than Earth's Moon. From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and the sunlight would be as much as 11 times brighter. Despite its proximity to the Sun, Mercury is not the hottest planet in our solar system – that title belongs to nearby Venus, thanks to its dense atmosphere. But Mercury is the fastest planet, zipping around the Sun every 88 Earth days. Mercury is appropriately named for the swiftest of the ancient Roman gods.",
 
@@ -89,6 +90,7 @@ db.planets.insertMany([
     dfe: '588 million kilometers',
 
     picture:'https://solarsystem.nasa.gov/system/resources/detail_files/113_PIA02873.jpg',
+    gif: 'https://i.giphy.com/media/l0HlJaqSZ9GcjUKys/giphy.webp',
 
     summary: "Jupiter is the fifth planet from our Sun and is, by far, the largest planet in the solar system – more than twice as massive as all the other planets combined. Jupiter's stripes and swirls are actually cold, windy clouds of ammonia and water, floating in an atmosphere of hydrogen and helium. Jupiter’s iconic Great Red Spot is a giant storm bigger than Earth that has raged for hundreds of years. Jupiter is surrounded by more than 65 known moons. Scientists are most interested in the Galilean satellites – the four largest moons discovered by Galileo Galilei in 1610: Io, Europa, Ganymede and Callisto. Jupiter also has several rings, but unlike the famous rings of Saturn, Jupiter’s rings are very faint and made of dust, not ice. Jupiter is named for the king of the ancient Roman gods.​",
 
@@ -175,8 +177,8 @@ db.planets.insertMany([
 
   {
     name: 'Planet X',
-    age: 'Unknoun',
-    dfe: 'Unknoun',
+    age: 'Unknown',
+    dfe: 'Unknown',
 
     picture:'https://img.gazeta.ru/files3/619/8032619/Planet-9-pic905-895x505-95298.jpg',
 
@@ -188,6 +190,6 @@ db.planets.insertMany([
 
     formation: "Caltech researchers have found mathematical evidence suggesting there may be a Planet X deep in the solar system. This hypothetical Neptune-sized planet orbits our sun in a highly elongated orbit far beyond Pluto. The object, which the researchers have nicknamed Planet Nine, could have a mass about 10 times that of Earth and orbit about 20 times farther from the sun on average than Neptune. It may take between 10,000 and 20,000 Earth years to make one full orbit around the sun. The announcement does not mean there is a new planet in our solar system. The existence of this distant world is only theoretical at this point and no direct observation of the object nicknamed have been made. The mathematical prediction of a planet could explain the unique orbits of some smaller objects in the Kuiper Belt, a distant region of icy debris that extends far beyond the orbit of Neptune. Astronomers are now searching for the predicted planet.",
 
-    life: "Uknoun"
+    life: "Unknown"
   },
 ]);

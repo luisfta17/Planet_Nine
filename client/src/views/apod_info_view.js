@@ -11,7 +11,11 @@ ApodInfoView.prototype.initialRender = function (apod) {
   this.container.appendChild(heading);
 
   this.createTitle(apod.title);
-  this.createImage(apod.hdurl);
+  if (apod.media_type === "video") {
+    this.createVideo(apod.url)
+  } else {
+    this.createImage(apod.hdurl);
+  }
   this.createDate(apod.date);
   this.createExplanation(apod.explanation);
 
@@ -29,6 +33,17 @@ ApodInfoView.prototype.initialRender = function (apod) {
   });
   this.container.appendChild(goBackButton);
 
+};
+
+ApodInfoView.prototype.createVideo = function (src) {
+  const iframe= document.createElement('iframe');
+  iframe.width = "1080";
+  iframe.height = "600";
+  iframe.src = src;
+  iframe.scrolling = "no";
+  iframe.style = "border: 0 none transparent;";
+  iframe.frameborder = "0";
+  this.container.appendChild(iframe);
 };
 
 ApodInfoView.prototype.createImage = function (src) {
