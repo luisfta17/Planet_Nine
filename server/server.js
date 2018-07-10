@@ -17,6 +17,14 @@ MongoClient.connect('mongodb://localhost:27017', (err, client ) => {
 
 })
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/public', 'landing.html'));
+});
+
+app.get('/universe', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/public', 'index.html'));
+});
+
 const publicPath = path.join(__dirname, '../client/public');
 app.use(express.static(publicPath));
 
@@ -29,6 +37,8 @@ app.get('/api/hubble', (req, res) => {
     .then(jsonData => jsonData.json())
     .then(data => res.json(data));
 });
+
+
 
 app.listen(3000, function () {
   console.log(`Listening on port ${ this.address().port }`);

@@ -7,6 +7,7 @@ db.planets.insertMany([
     dfe: '149.60 million kilometers',
     radius: '695,508 kilometers',
     picture: 'https://solarsystem.nasa.gov/system/resources/detail_files/768_oct_1_2015_flare.jpg',
+    gif: 'https://media.giphy.com/media/ctGFLebG1AqK4/giphy.gif',
     summary: 'The Sun is a hot ball of glowing gases at the heart of our solar system. Its gravity holds in its orbit everything from the biggest planets to the smallest particles of debris. There are billions of stars like our Sun scattered across the Milky Way galaxy. The Sun drives the Earths seasons, ocean currents, weather, climate, radiation belts and auroras. The Sun’s volume would need 1.3 million Earths to fill it.',
     orbitAndRotation: 'The Sun is located in the Milky Way galaxy. The Sun orbits the center of the Milky Way Galaxy, bringing the planets, asteroids, comets and other objects along with it. Our Sun is in a spiral arm called the Orion Spur that extends outward from the Sagittarius arm. Our solar system is moving with an average velocity of 450,000 miles per hour (720,000 kilometers per hour). But even at this speed, it takes us about 230 million years to make one complete orbit around the Milky Way. At the equator, the Sun spins around once about every 25 days, but at its poles the Sun rotates once on its axis every 36 Earth days.At the equator, the Sun spins once about every 25 days, but at its poles the Sun rotates once on its axis every 35 Earth days.',
     formation: 'The Sun and the rest of the solar system formed from a solar nebula about 4.5 billion years ago. The Sun will someday run out of energy. When the Sun starts to die, it will swell so big that it will engulf Mercury and Venus and maybe even Earth. However the Sun is a little less than halfway through its lifetime and will last another 6.5 billion years before it shrinks down to be a white dwarf. It core is about 27 million degrees Fahrenheit (15 million degrees Celsius).',
@@ -98,6 +99,7 @@ db.planets.insertMany([
     dfe: '1.7 billion kilometers',
 
     picture:'https://solarsystem.nasa.gov/system/resources/detail_files/210_SaturnNorthernSummer1200w.jpg',
+    gif: 'https://i.imgur.com/d7YF6kg.gif',
 
     summary: "Saturn is the sixth planet from the Sun and the second largest planet in our solar system. Adorned with a dazzling system of icy rings, Saturn is unique among the planets. It is not the only planet to have rings, but none are as spectacular or as complex as Saturn's. Like fellow gas giant Jupiter, Saturn is a massive ball made mostly of hydrogen and helium. Surrounded by more than 60 known moons, Saturn is home to some of the most fascinating landscapes in our solar system. From the jets of water that spray from Enceladus to the methane lakes on smoggy Titan, the Saturn system is a rich source of scientific discovery and still holds many mysteries. The farthest planet from Earth discovered by the unaided human eye, Saturn has been known since ancient times. Saturn is 9 times wider than Earth. It takes sunlight 80 minutes to travel from the Sun to Saturn.",
 
