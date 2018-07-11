@@ -5,7 +5,6 @@ body {
   background-image: url("https://darthmojo.files.wordpress.com/2009/03/bsg-stars.png");
   background-size: cover;
   background-position: center;
-  font-family: leto;
   color: white;
 }
 
@@ -67,7 +66,7 @@ h2, p, h3, h4, h1 {
 .container {
   background: transparent;
   width: 75%;
-  margin-left: 185px;
+  margin-left: 12.5%;
   /* border: solid white;
   border-radius: 1%; */
   color: white;
