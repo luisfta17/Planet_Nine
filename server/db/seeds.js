@@ -95,7 +95,7 @@ db.planets.insertMany([
 
   {
     name: 'Saturn',
-    radius: '58,232 kilometers)',
+    radius: '58,232 kilometers',
     dfe: '1.7 billion kilometers',
 
     picture:'https://solarsystem.nasa.gov/system/resources/detail_files/210_SaturnNorthernSummer1200w.jpg',
