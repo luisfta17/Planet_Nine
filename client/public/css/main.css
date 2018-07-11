@@ -178,7 +178,7 @@ p {
 }
 
  .back-button:after {
-  content: '<<';
+  content: ' <<';
   position: left;
   opacity: 0;
   top: 0;
@@ -206,17 +206,10 @@ p {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    /* margin: 4px 2px; */
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
 }
-
-/* .more-button {
-    background-color: orange;
-    color: black;
-    border: 2px solid;
-} */
 
 .more-button:hover {
     background-color: white;
