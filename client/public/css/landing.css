@@ -47,7 +47,7 @@ p{
 }
 
 .slideshow li:nth-child(1) {
-  background-image: url(https://cdn.spacetelescope.org/archives/images/screen/heic1104a.jpg)
+  background-image: url(https://cdn.spacetelescope.org/archives/images/screen/heic1310a.jpg)
 }
 .slideshow li:nth-child(2) {
   background-image: url(https://cdn.spacetelescope.org/archives/images/screen/heic0506a.jpg);
@@ -58,7 +58,7 @@ p{
   animation-delay: 20s;
 }
 .slideshow li:nth-child(4) {
-  background-image: url(https://cdn.spacetelescope.org/archives/images/screen/opo0328a.jpg);
+  background-image: url(https://cdn.spacetelescope.org/archives/images/screen/heic1520a.jpg);
   animation-delay: 30s;
 }
 .slideshow li:nth-child(5) {
