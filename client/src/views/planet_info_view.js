@@ -66,7 +66,7 @@ PlanetInfoView.prototype.planetInfoRender = function (planets, value) {
   this.createParagraph(planets[value].orbitAndRotation);
   this.createSubtitle("Formation");
   this.createParagraph(planets[value].formation);
-  this.createSubtitle("Can have life?");
+  this.createSubtitle("Can it support life?");
   this.createParagraph(planets[value].life);
 
   const goBackButton = this.createButton("Go back");
