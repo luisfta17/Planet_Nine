@@ -137,7 +137,7 @@ db.planets.insertMany([
 
     orbitAndRotation: "One day on Neptune takes about 16 hours (the time it takes for Neptune to rotate or spin once). And Neptune makes a complete orbit around the Sun (a year in Neptunian time) in about 165 Earth years. Sometimes Neptune is even farther from the Sun than dwarf planet Pluto. Pluto's highly eccentric, oval-shaped orbit brings it inside Neptune's orbit for a 20-year period every 248 Earth years. This switch, in which Pluto is closer to the Sun than Neptune, happened most recently from 1979 to 1999. Pluto can never crash into Neptune, though, because for every three laps Neptune takes around the Sun, Pluto makes two. This repeating pattern prevents close approaches of the two bodies. Neptune’s axis of rotation is tilted 28 degrees with respect to the plane of its orbit around the Sun, which is similar to the axial tilts of Mars and Earth. This means that Neptune experiences seasons just like we do on Earth; however, since its year is so long, each of the four seasons lasts for over 40 years.",
 
-    formation: "Neptune likely formed closer to the Sun and moved to the outer solar system about 4 billion years ago. Most of its mass is a hot, dense fluid of "icy" materials – water, methane and ammonia – above a small rocky core.",
+    formation: "Neptune likely formed closer to the Sun and moved to the outer solar system about 4 billion years ago. Most of its mass is a hot, dense fluid of 'icy' materials – water, methane and ammonia – above a small rocky core.",
 
     life: "Neptune's environment is not conducive to life as we know it. The temperatures, pressures and materials that characterize this planet are most likely too extreme and volatile for organisms to adapt to."
   },
