@@ -188,7 +188,7 @@ p {
   position: left;
   opacity: 0;
   top: 0;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 
  .back-button:hover  {
