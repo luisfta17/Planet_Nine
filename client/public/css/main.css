@@ -9,6 +9,10 @@ body {
   color: white;
 }
 
+h2, p, h3, h4, h1 {
+  font-family: 'Exo', sans-serif;
+}
+
 #mapid { height: 400px; }
 
 #planet-picture {
@@ -75,11 +79,11 @@ body {
 }
 
 .navbar {
+  font-family: 'Exo', sans-serif;
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
   background-color: transparent;
-  font-family: Arial;
 }
 
 .home {

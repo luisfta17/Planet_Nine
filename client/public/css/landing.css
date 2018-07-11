@@ -4,6 +4,7 @@ body {
 
 p{
   color: white;
+  font-family: 'Exo', sans-serif;
 }
 
 #landing-header {
@@ -15,6 +16,7 @@ p{
 
 #landing-header h1 {
   color: #fff;
+  font-family: 'Exo', sans-serif;
 }
 
 
