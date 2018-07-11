@@ -117,8 +117,7 @@ IssInfoView.prototype.addVideo = function () {
   iframe.frameborder = "0";
   iframe.classList.add("block");
   iframe.classList.add("center");
-  iframe.allowfullscreen = true;
-  iframe.webkitallowfullscreen = true;
+  iframe.setAttribute('allowFullScreen', '');
   this.container.appendChild(iframe);
 };
 

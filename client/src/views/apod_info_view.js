@@ -54,6 +54,7 @@ ApodInfoView.prototype.createVideo = function (src) {
   iframe.scrolling = "no";
   iframe.style = "border: 0 none transparent;";
   iframe.frameborder = "0";
+  iframe.setAttribute('allowFullScreen', '');
   this.container.appendChild(iframe);
 };
 
