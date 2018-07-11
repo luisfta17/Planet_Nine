@@ -20,7 +20,8 @@ IssInfoView.prototype.initialRender = function (iss) {
 
   this.createVideoTemplate(videoTemplateSelector);
 
-  const returnButton = this.createButton("Return to Main Page");
+  const returnButton = this.createButton("Go Back");
+  returnButton.classList.add("back-button");
   returnButton.addEventListener('click', () => {
     window.location.href = "/universe";
   });

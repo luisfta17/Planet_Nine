@@ -20,14 +20,15 @@ HubbleInfoView.prototype.initialRender = function (picture) {
     this.createParagraph(picture.description, pictureTemplateSelector);
   }
 
-  const randomButton = this.createButton("Other pic");
+  const randomButton = this.createButton("Click for Another pic");
   randomButton.addEventListener('click', () => {
     this.requestNewData();
   });
   this.container.appendChild(randomButton);
 
 
-  const returnButton = this.createButton("Return to Main Page");
+  const returnButton = this.createButton("Go Back");
+  returnButton.classList.add("back-button");
   returnButton.addEventListener('click', () => {
     window.location.href = "/universe";
   });

@@ -31,6 +31,7 @@ ApodInfoView.prototype.initialRender = function (apod) {
   this.container.appendChild(footer);
 
   const goBackButton = this.createButton("Go back");
+  goBackButton.classList.add("back-button");
   goBackButton.addEventListener('click', () => {
   window.location = "http://localhost:3000";
   });
