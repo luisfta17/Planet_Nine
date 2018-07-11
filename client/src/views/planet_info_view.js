@@ -69,6 +69,7 @@ PlanetInfoView.prototype.planetInfoRender = function (planets, value) {
   this.createParagraph(planets[value].life);
 
   const goBackButton = this.createButton("Go back");
+  goBackButton.classList.add("back-button");
   goBackButton.addEventListener('click', () => {
     this.container.className = ""
     this.initialRender(planets, value)

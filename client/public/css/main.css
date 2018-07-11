@@ -154,3 +154,42 @@ p {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.back-button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  padding-right: 0px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.back-button {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+ .back-button:after {
+  content: '<<';
+  position: left;
+  opacity: 0;
+  top: 0;
+  transition: 0.5s;
+}
+
+ .back-button:hover  {
+  padding-right: 20px;
+}
+
+.back-button:hover:after {
+  opacity: 1;
+  right: 0;
+}
