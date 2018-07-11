@@ -21,6 +21,7 @@ HubbleInfoView.prototype.initialRender = function (picture) {
   }
 
   const randomButton = this.createButton("Click for Another pic");
+  randomButton.classList.add("more-button");
   randomButton.addEventListener('click', () => {
     this.requestNewData();
   });

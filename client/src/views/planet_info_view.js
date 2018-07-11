@@ -48,6 +48,7 @@ PlanetInfoView.prototype.initialRender = function (planets, value) {
 
 
   const moreInfoButton = this.createButton("More info");
+  moreInfoButton.classList.add("more-button");
   moreInfoButton.addEventListener('click', () => {
     this.planetInfoRender(planets, planetValue)
   });
