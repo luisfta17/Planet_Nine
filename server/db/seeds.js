@@ -94,7 +94,7 @@ db.planets.insertMany([
 
   {
     name: 'Saturn',
-    radius: '58,232 kilometers)',
+    radius: '58,232 kilometers',
     dfe: '1.7 billion kilometers',
 
     picture:'https://i.imgur.com/pkYGpZn.jpg',
