@@ -12,7 +12,17 @@ h2, p, h3, h4, h1 {
   font-family: 'Exo', sans-serif;
 }
 
-#mapid { height: 400px; }
+h2 {
+  font-size: 40px;
+}
+
+p {
+  padding-bottom: 15px;
+}
+
+#mapid {
+  height: 400px;
+}
 
 #planet-picture {
   height: 560px;
