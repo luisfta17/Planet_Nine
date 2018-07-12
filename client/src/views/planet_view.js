@@ -1,9 +1,9 @@
 const PubSub = require('../helpers/pub_sub');
 const PlanetInfoView = require('./planet_info_view');
 
-const PlanetView = function(container, planets){
+const PlanetView = function(container){
   this.container = container;
-  this.planets = planets;
+  this.planets = null;
 };
 
 PlanetView.prototype.bindEvents = function () {

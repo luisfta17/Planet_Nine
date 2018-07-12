@@ -86,12 +86,14 @@ HubbleInfoView.prototype.createButton = function (text) {
 };
 
 HubbleInfoView.prototype.findPngOrJpg = function (picture, startPoint) {
-  const lastLink = picture.image_files[picture.image_files.length - startPoint].file_url;
-  if (this.isPicture(lastLink)) {
-    this.createImage(lastLink);
-  } else {
-    startPoint ++;
-    this.findPngOrJpg(picture, startPoint);
+  if (startPoint < picture.image_files.length  ) {
+    const lastLink = picture.image_files[picture.image_files.length - startPoint].file_url;
+    if (this.isPicture(lastLink)) {
+      this.createImage(lastLink);
+    } else {
+      startPoint ++;
+      this.findPngOrJpg(picture, startPoint);
+    }
   }
 };
 
